@@ -1,0 +1,119 @@
+@import "components/Main-MainMovies/MovieList/mixins.scss";
+
+.main{
+  padding: 25px 130px 30px 120px;
+  background-color: #151515;
+  color: #fff;
+  font-family: Asap;
+  .details{
+    margin-bottom: 65px;
+    .info{
+      display: flex;
+      gap: 33px;
+      @include movieItem(320px, 485px, 50px, 28px, 17px);
+      &-container{
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        h4{
+          font-weight: 400;
+          font-size: 14px;
+          margin-bottom: 2px;
+        }
+        .title{
+          gap: 14px;
+          h4{
+            margin-bottom: 12px;
+          }
+          &__value{
+            font-size: 40px;
+            line-height: 36px;
+          }
+          margin-bottom: 10px;
+        }
+        .overview{
+          h4{
+            margin-bottom: 16px;
+          }
+          .overview__value{
+            color: #d6d6d6;
+            font-size: 16px;
+            line-height: 28px;
+          }
+        }
+        .genres{
+          display: flex;
+          gap: 10px;
+          p{
+            font-size: 14px;
+            padding: 6px 10px;
+            border-radius: 8px;
+            background-color: #3cb43a;
+          }
+        }
+        section h4{
+          font-size: 22px;
+        }
+        .cast{
+          margin-bottom: 80px;
+          .cast-up-container{
+            display: flex;
+            justify-content: space-between;
+            p{
+              font-size: 14px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 6px 7px;
+              border: 1px solid #fff;
+              border-radius: 5px;
+            }
+          }
+          .actor-list{
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            .actor-item{
+              img{
+                border-radius: 6px;
+                height: 160px;
+                width: 115px;
+                object-fit: cover;
+              }
+              &__name{
+                margin-top: 8px;
+                font-size: 16px;
+                font-weight: bold;
+              }
+              &__character{
+                margin-top: 6px;
+                font-size: 14px;
+              }
+          }
+          }
+        }
+        .images{
+          &-content{
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            img{
+              height: 110px;
+              width: 185px;
+              border-radius: 5px;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+  .recomendations{
+    &__title{
+      font-size: 38px;
+      margin-bottom: 45px;
+      font-weight: 400;
+    }
+  }
+}

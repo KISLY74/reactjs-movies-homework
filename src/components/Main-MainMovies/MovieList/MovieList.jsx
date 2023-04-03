@@ -1,3 +1,4 @@
+import "./MovieList.scss"
 import { useEffect, useState } from "react"
 import MovieItem from "./MovieItem/MovieItem"
 
@@ -14,22 +15,33 @@ const moviesData = [
   }
 ]
 
-const MovieList = () => {
+const MovieList = (props) => {
   const [movies, setMovies] = useState([])
 
-  useEffect(() => {
+  function getMovies() {
     let tmp = []
 
     for (let i = 0; i < 10; i++)
       moviesData.map(m => tmp.push(m))
 
     setMovies(tmp)
-  }, [movies])
+  }
+
+  useEffect(() => {
+    if (!props.movies)
+      getMovies()
+    else
+      setMovies(props.movies)
+  }, [])
 
   return <section className="list-items">
-    {movies ? movies.map(movie => {
-      return <MovieItem key={movie.id} movie={movie} genres={movie.genres} />
-    }) : false}
+    {movies ? movies.map(movie =>
+      <MovieItem
+        key={movie.id}
+        movie={movie}
+        genres={movie.genres}
+        isHideDesc={false} />
+    ) : false}
   </section>
 }
 

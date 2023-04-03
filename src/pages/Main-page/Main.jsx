@@ -4,7 +4,7 @@ import MainMovies from "components/Main-MainMovies/MainMovies"
 
 const Main = () => {
   return <div className="main-container">
-    <Header />
+    <Header title={"Main"} />
     <MainMovies />
   </div>
 }

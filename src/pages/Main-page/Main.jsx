@@ -1,8 +1,11 @@
-import Header from "../../components/Header/Header"
+import './Main.scss'
+import Header from "components/Header/Header"
+import MainMovies from "components/Main-MainMovies/MainMovies"
 
 const Main = () => {
   return <div className="main-container">
-    <Header />
+    <Header title={"Main"} />
+    <MainMovies />
   </div>
 }
 

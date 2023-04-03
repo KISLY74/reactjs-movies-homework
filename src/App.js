@@ -1,6 +1,10 @@
+import Main from "./pages/Main-page/Main"
+
 function App() {
   return (
-    <div>react app</div>
+    <>
+      <Main />
+    </>
   );
 }
 

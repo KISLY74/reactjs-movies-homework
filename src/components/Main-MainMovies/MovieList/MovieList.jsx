@@ -32,7 +32,7 @@ const MovieList = (props) => {
       getMovies()
     else
       setMovies(props.movies)
-  }, [])
+  }, [props.movies])
 
   return <section className="list-items">
     {movies ? movies.map(movie =>

@@ -1,0 +1,22 @@
+@import "./mixins.scss";
+
+.list-items{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 65px;
+  .item{
+    &__title{
+      font-size: 20px;
+      font-weight: 400;
+      color: #b9b9b9;
+    }
+    .genres{
+      display: flex;
+      flex-wrap: wrap;
+      color: #aaa;
+      margin-top: 11px;
+      column-gap: 6px;
+    }
+  }
+  @include movieItem(185px, 275px, 32px, 18px, 12px);
+}

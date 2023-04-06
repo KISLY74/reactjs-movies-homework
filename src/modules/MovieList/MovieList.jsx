@@ -1,6 +1,6 @@
 import "./MovieList.scss"
 import { useEffect, useState } from "react"
-import MovieItem from "./MovieItem/MovieItem"
+import MovieItem from "components/Main-MainMovies/MovieItem/MovieItem"
 
 const moviesData = [
   {

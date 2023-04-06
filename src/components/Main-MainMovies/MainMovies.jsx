@@ -1,6 +1,6 @@
-import CategoriesTabs from "./CategoriesTabs/CategoriesTabs"
-import MovieList from "./MovieList/MovieList"
-import Pagination from "./Pagination/Pagination"
+import CategoriesTabs from "modules/CategoriesTabs/CategoriesTabs"
+import MovieList from "modules/MovieList/MovieList"
+import Pagination from "modules/Pagination/Pagination"
 
 const MainMovies = () => {
   return <main className="main">

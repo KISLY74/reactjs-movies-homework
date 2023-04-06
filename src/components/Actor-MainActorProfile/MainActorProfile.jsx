@@ -1,5 +1,5 @@
 import image from "assets/img.webp"
-import MovieList from "components/Main-MainMovies/MovieList/MovieList"
+import MovieList from "modules/MovieList/MovieList"
 
 const MainActorProfile = () => {
   return <main className="main">

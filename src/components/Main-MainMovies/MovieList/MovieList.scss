@@ -3,7 +3,8 @@
 .list-items{
   display: flex;
   flex-wrap: wrap;
-  gap: 65px;
+  column-gap: 65px;
+  row-gap: 30px;
   .item{
     &__title{
       font-size: 20px;

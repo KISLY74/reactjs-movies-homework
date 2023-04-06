@@ -1,4 +1,4 @@
-import MovieItem from "components/Main-MainMovies/MovieList/MovieItem/MovieItem"
+import MovieItem from "components/Main-MainMovies/MovieItem/MovieItem"
 import ActorList from "./ActorList/ActorList"
 import image from "assets/img.webp"
 

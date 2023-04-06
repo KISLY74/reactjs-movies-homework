@@ -1,4 +1,4 @@
-import "./Actor.scss"
+import "./ActorProfile.scss"
 import MainActorProfile from "components/Actor-MainActorProfile/MainActorProfile"
 import Header from "components/Header/Header"
 

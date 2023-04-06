@@ -1,6 +1,6 @@
 import "./MovieList.scss"
 import { useEffect } from "react"
-import MovieItem from "../../components/Main-MainMovies/MovieItem/MovieItem"
+import MovieItem from "components/Main-MainMovies/MovieItem/MovieItem"
 import { useDispatch, useSelector } from "react-redux"
 import { getPopularMovies, getAllGenres, getTopRatedMovies, getUpcomingMovies } from "store/api"
 

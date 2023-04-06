@@ -1,4 +1,4 @@
-import MovieList from "components/Main-MainMovies/MovieList/MovieList"
+import MovieList from "modules/MovieList/MovieList"
 import Details from "./Details/Details"
 
 const MainMovieDetails = () => {

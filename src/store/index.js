@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { CategoriesTabsReducer } from "components/Main-MainMovies/CategoriesTabs/CategoriesTabs.slice";
-import { MovieReducer } from "components/Main-MainMovies/MovieList/MovieList.slice.js"
+import { CategoriesTabsReducer } from "modules/CategoriesTabs/CategoriesTabs.slice";
+import { MovieReducer } from "modules/MovieList/MovieList.slice.js"
 
 export const store = configureStore({
   reducer: {

@@ -24,3 +24,11 @@ export const getUpcomingMovies = createAsyncThunk(`moviesUpcoming`, async (page)
 export const getAllGenres = createAsyncThunk(`allGenres`, () => {
   return axios.get(BASE_URL + 'genre/movie/list', config).then(res => res.data.genres)
 })
+
+export const getMovieById = createAsyncThunk(`movieById`, (id) => {
+  return axios.get(BASE_URL + `movie/${id}`, config).then(res => res.data)
+})
+
+export const getCastByMovieId = createAsyncThunk(`castByMovieId`, (id) => {
+  return axios.get(BASE_URL + `movie/${id}/credits`, config).then(res => res.data.cast)
+})

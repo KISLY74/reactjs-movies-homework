@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom"
 import { IMAGE_URL } from "store/api"
 
 const MovieItem = (props) => {
-  return <div className="item">
+  const history = useNavigate()
+
+  return <div className="item" onClick={() => history(`/movie/${props.movie.id}`)}>
     <p className={`item__vote-average ${props.movie.vote_average >= 7 ? 'from-seven' : 'up-to-seven'}`}>
       {props.movie.vote_average}
     </p>

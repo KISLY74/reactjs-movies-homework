@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import MovieItem from "components/Main-MainMovies/MovieItem/MovieItem"
 import { useDispatch, useSelector } from "react-redux"
 import { getPopularMovies, getAllGenres, getTopRatedMovies, getUpcomingMovies } from "store/api"
+import MovieItemSkeleton from "components/Main-MainMovies/MovieItem/MovieItemSkeleton"
 
 const functionsCategory = {
   "Popular": getPopularMovies,
@@ -13,22 +14,22 @@ const functionsCategory = {
 const MovieList = () => {
   const movie = useSelector(state => state.movie)
   const { activeCategory } = useSelector(state => state.categories)
+  const { page } = useSelector(state => state.pagination)
   const dispatch = useDispatch()
 
   useEffect(() => {
     (function () {
       for (let i in functionsCategory)
         if (activeCategory === i)
-          dispatch(functionsCategory[i]())
+          dispatch(functionsCategory[i](page))
     }())
 
     dispatch(getAllGenres())
-  }, [activeCategory, dispatch])
+  }, [activeCategory, dispatch, page])
 
   return <section className="list-items">
-    {!movie.loading &&
-      movie.movies ?
-      movie.movies.map(item => {
+    {movie.loading ? new Array(20).fill(<MovieItemSkeleton />) :
+      movie.movies ? movie.movies.map(item => {
         return <MovieItem
           key={item.id}
           movie={item}

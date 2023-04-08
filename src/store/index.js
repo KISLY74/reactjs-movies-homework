@@ -4,6 +4,7 @@ import { MovieReducer } from "modules/MovieList/MovieList.slice.js"
 import { PaginationReducer } from "modules/Pagination/Pagination.slice";
 import { MainMovieDetailsReducer } from "components/Movie-MainMovieDetails/MainMovieDetails.slice";
 import { ActorListReducer } from "components/Movie-MainMovieDetails/Details/ActorList/ActorList.slice";
+import { MainActorProfileReducer } from "components/Actor-MainActorProfile/MainActorProfile.slice";
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     categories: CategoriesTabsReducer,
     pagination: PaginationReducer,
     details: MainMovieDetailsReducer,
-    actor: ActorListReducer
+    actor: ActorListReducer,
+    actorProfile: MainActorProfileReducer
   }
 })

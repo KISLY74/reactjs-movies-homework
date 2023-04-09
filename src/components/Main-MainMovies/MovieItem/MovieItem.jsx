@@ -22,6 +22,7 @@ const MovieItem = (props) => {
         })}
       </div>
     </> : false}
+    <div className="item__hover-effect" />
   </div>
 }
 

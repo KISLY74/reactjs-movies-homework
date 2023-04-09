@@ -8,9 +8,9 @@ const Header = ({ title }) => {
     <div className="container">
       <h1 className="container__title">{title}</h1>
       <div className="search-language">
-        <Provider store={store}>
+        {title === 'Main' ? <Provider store={store}>
           <SearchInput />
-        </Provider>
+        </Provider> : null}
         <p className="search-language__language">EN</p>
       </div>
     </div>

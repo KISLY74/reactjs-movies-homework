@@ -31,6 +31,7 @@
           .photos{
             margin-top: 23px;
             display: flex;
+            flex-wrap: wrap;
             gap: 30px;
             img{
               width: 115px;

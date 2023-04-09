@@ -52,3 +52,9 @@ export const getRecommendations = createAsyncThunk(`recommendations`, (id) => {
 export const getCastMovieByPerson = createAsyncThunk(`castMoviesByPerson`, (id) => {
   return axios.get(BASE_URL + `person/${id}/movie_credits`, config).then(res => res.data.cast)
 })
+
+export const getMoviesBySearchQuery = createAsyncThunk(`castMoviesByPerson`, ({ value, page }) => {
+  config.params.query = value
+  config.params.page = page
+  return axios.get(BASE_URL + `search/movie`, config).then(res => res.data.results)
+})

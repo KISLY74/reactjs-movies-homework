@@ -5,6 +5,7 @@ import { PaginationReducer } from "modules/Pagination/Pagination.slice";
 import { MainMovieDetailsReducer } from "components/Movie-MainMovieDetails/MainMovieDetails.slice";
 import { ActorListReducer } from "components/Movie-MainMovieDetails/Details/ActorList/ActorList.slice";
 import { MainActorProfileReducer } from "components/Actor-MainActorProfile/MainActorProfile.slice";
+import { SearchInputReducer } from "components/SearchInput/SearchInput.slice";
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     pagination: PaginationReducer,
     details: MainMovieDetailsReducer,
     actor: ActorListReducer,
-    actorProfile: MainActorProfileReducer
+    actorProfile: MainActorProfileReducer,
+    search: SearchInputReducer
   }
 })

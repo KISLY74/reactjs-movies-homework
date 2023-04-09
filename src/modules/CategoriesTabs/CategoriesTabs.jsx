@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { setActiveCategory } from "./CategoriesTabs.slice"
+import { changeValue } from "components/SearchInput/SearchInput.slice"
 
 const CategoriesTabs = () => {
   const dispatch = useDispatch()
@@ -10,6 +11,7 @@ const CategoriesTabs = () => {
   const categoryNames = ["Popular", "Top rated", "Upcoming"]
 
   function handleClickCategory(elem) {
+    dispatch(changeValue(''))
     let categories = categoriesRef.current.children
 
     for (let i = 0; i < categories.length; i++)

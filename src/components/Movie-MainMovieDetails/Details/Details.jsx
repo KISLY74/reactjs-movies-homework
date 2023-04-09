@@ -2,9 +2,13 @@ import MovieItem from "components/Main-MainMovies/MovieItem/MovieItem"
 import { useSelector } from "react-redux"
 import ActorList from "./ActorList/ActorList"
 import { IMAGE_URL } from "store/api"
+import { useState } from "react"
 
 const Details = () => {
   const { movie, images } = useSelector(state => state.details)
+  const [isHide, setIsHide] = useState(true)
+
+  const handleClickShowHide = () => isHide ? setIsHide(false) : setIsHide(true)
 
   return <section className="details">
     <section className="info">
@@ -39,9 +43,11 @@ const Details = () => {
         <section className="cast">
           <div className="cast-up-container">
             <h4>Top Billed Cast:</h4>
-            <p>Show all</p>
+            <p className="cast-up-container__show-hide" onClick={() => handleClickShowHide()}>
+              {isHide ? "Show all" : "Hide all"}
+            </p>
           </div>
-          <ActorList />
+          <ActorList isHide={isHide} />
         </section>
         <section className="images">
           <h4>Images:</h4>

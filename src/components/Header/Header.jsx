@@ -1,5 +1,5 @@
 import "./Header.scss"
-import SearchInput from "../SearchInput/SearchInput"
+import SearchInput from "../../modules/SearchInput/SearchInput"
 
 const Header = ({ title }) => {
   return <header className="header">

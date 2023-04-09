@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { setActiveCategory } from "./CategoriesTabs.slice"
-import { changeValue } from "components/SearchInput/SearchInput.slice"
+import { changeValue } from "modules/SearchInput/SearchInput.slice"
 
 const CategoriesTabs = () => {
   const dispatch = useDispatch()

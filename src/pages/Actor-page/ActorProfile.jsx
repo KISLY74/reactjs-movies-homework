@@ -1,5 +1,5 @@
 import "./ActorProfile.scss"
-import MainActorProfile from "components/Actor-MainActorProfile/MainActorProfile"
+import MainActorProfile from "modules/Actor-MainActorProfile/MainActorProfile"
 import Header from "components/Header/Header"
 
 const ActorProfile = () => {

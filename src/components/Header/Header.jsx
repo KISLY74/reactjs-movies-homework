@@ -1,5 +1,5 @@
 import "./Header.scss"
-import SearchInput from "../SearchInput/SearchInput"
+import SearchInput from "modules/SearchInput/SearchInput"
 import { Provider } from "react-redux"
 import { store } from "store"
 

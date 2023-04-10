@@ -59,7 +59,7 @@
           .cast-up-container{
             display: flex;
             justify-content: space-between;
-            p{
+            &__show-hide{
               font-size: 14px;
               display: flex;
               justify-content: center;
@@ -67,14 +67,24 @@
               padding: 6px 7px;
               border: 1px solid #fff;
               border-radius: 5px;
-            }
+              cursor: pointer;
+              transition: .2s;
+              &:hover{
+                transition: .2s;
+                color: #151515;
+                background-color: #fff;
+              }
+          }
           }
           .actor-list{
             display: flex;
+            flex-wrap: wrap;
             gap: 30px;
             margin-top: 20px;
             .actor-item{
+              width: 115px;
               img{
+                cursor: pointer;
                 border-radius: 6px;
                 height: 160px;
                 width: 115px;

@@ -24,3 +24,37 @@ export const getUpcomingMovies = createAsyncThunk(`moviesUpcoming`, async (page)
 export const getAllGenres = createAsyncThunk(`allGenres`, () => {
   return axios.get(BASE_URL + 'genre/movie/list', config).then(res => res.data.genres)
 })
+
+export const getMovieById = createAsyncThunk(`movieById`, (id) => {
+  return axios.get(BASE_URL + `movie/${id}`, config).then(res => res.data)
+})
+
+export const getCastByMovieId = createAsyncThunk(`castByMovieId`, (id) => {
+  return axios.get(BASE_URL + `movie/${id}/credits`, config).then(res => res.data.cast)
+})
+
+export const getPersonById = createAsyncThunk(`personById`, (id) => {
+  return axios.get(BASE_URL + `person/${id}`, config).then(res => res.data)
+})
+
+export const getImagesByPerson = createAsyncThunk(`imagesByPerson`, (id) => {
+  return axios.get(BASE_URL + `person/${id}/images`, config).then(res => res.data.profiles)
+})
+
+export const getImagesByMovie = createAsyncThunk(`imagesByMovie`, (id) => {
+  return axios.get(BASE_URL + `movie/${id}/images`, config).then(res => res.data.backdrops)
+})
+
+export const getRecommendations = createAsyncThunk(`recommendations`, (id) => {
+  return axios.get(BASE_URL + `movie/${id}/recommendations`, config).then(res => res.data.results)
+})
+
+export const getCastMovieByPerson = createAsyncThunk(`castMoviesByPerson`, (id) => {
+  return axios.get(BASE_URL + `person/${id}/movie_credits`, config).then(res => res.data.cast)
+})
+
+export const getMoviesBySearchQuery = createAsyncThunk(`castMoviesByPerson`, ({ value, page }) => {
+  config.params.query = value
+  config.params.page = page
+  return axios.get(BASE_URL + `search/movie`, config).then(res => res.data.results)
+})

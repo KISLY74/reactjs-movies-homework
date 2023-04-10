@@ -12,6 +12,7 @@
     }
     &__vote-average{
       position: absolute;
+      z-index: 9;
       font-size: $fontSize;
       display: flex;
       justify-content: center;

@@ -1,47 +1,42 @@
 import "./MovieList.scss"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import MovieItem from "components/Main-MainMovies/MovieItem/MovieItem"
+import { useDispatch, useSelector } from "react-redux"
+import { getPopularMovies, getAllGenres, getTopRatedMovies, getUpcomingMovies } from "store/api"
+import MovieItemSkeleton from "components/Main-MainMovies/MovieItem/MovieItemSkeleton"
 
-const moviesData = [
-  {
-    vote_average: 9,
-    title: 'Spider man',
-    genres: ["Genre 1", "Genre 2", "Genre 3"]
-  },
-  {
-    vote_average: 6,
-    title: 'Hitman',
-    genres: ["Genre 1", "Genre 2", "Genre 3", "Genre 4", "Genre 5"]
-  }
-]
+const functionsCategory = {
+  "Popular": getPopularMovies,
+  "Top rated": getTopRatedMovies,
+  "Upcoming": getUpcomingMovies
+}
 
-const MovieList = (props) => {
-  const [movies, setMovies] = useState([])
-
-  function getMovies() {
-    let tmp = []
-
-    for (let i = 0; i < 10; i++)
-      moviesData.map(m => tmp.push(m))
-
-    setMovies(tmp)
-  }
+const MovieList = () => {
+  const movie = useSelector(state => state.movie)
+  const { activeCategory } = useSelector(state => state.categories)
+  const { page } = useSelector(state => state.pagination)
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    if (!props.movies)
-      getMovies()
-    else
-      setMovies(props.movies)
-  }, [props.movies])
+    (function () {
+      for (let i in functionsCategory)
+        if (activeCategory === i)
+          dispatch(functionsCategory[i](page))
+    }())
+
+    dispatch(getAllGenres())
+  }, [activeCategory, dispatch, page])
 
   return <section className="list-items">
-    {movies ? movies.map(movie =>
-      <MovieItem
-        key={movie.id}
-        movie={movie}
-        genres={movie.genres}
-        isHideDesc={false} />
-    ) : false}
+    {movie.loading ? new Array(20).fill(<MovieItemSkeleton />) :
+      movie.movies ? movie.movies.map(item => {
+        return <MovieItem
+          key={item.id}
+          movie={item}
+          allGenres={movie.genres}
+          genres={item.genre_ids}
+          isHideDesc={false} />
+      }) : null}
   </section>
 }
 

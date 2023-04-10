@@ -1,5 +1,5 @@
 import MovieList from "modules/MovieList/MovieList"
-import Details from "./Details/Details"
+import Details from "../../components/Details/Details"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"

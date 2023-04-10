@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import ActorItem from "./ActorItem/ActorItem"
+import ActorItem from "../../../components/ActorItem/ActorItem"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getCastByMovieId } from "store/api"

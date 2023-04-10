@@ -1,6 +1,6 @@
 import MovieItem from "components/Main-MainMovies/MovieItem/MovieItem"
 import { useSelector } from "react-redux"
-import ActorList from "./ActorList/ActorList"
+import ActorList from "modules/Movie-MainMovieDetails/ActorList/ActorList"
 import { IMAGE_URL } from "store/api"
 import { useState } from "react"
 
